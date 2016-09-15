@@ -16,10 +16,7 @@ services:
     - /usr/local/bin/docker:/usr/bin/docker
     - /opt/jenkins/:/var/lib/jenkins/
   depends_on:
-    - nexus
     - gitlab
-    - sonar
-    - seleniumhub
   environment:
     - NEXUS_PORT=8081
     - SONAR_PORT=9000
