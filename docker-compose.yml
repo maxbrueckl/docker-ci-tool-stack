@@ -29,6 +29,8 @@ services:
   build: ./gitlab
   restart: always
   hostname: '192.168.99.100'
+  networks:
+    - prodnetwork
   environment:
     GITLAB_OMNIBUS_CONFIG: |
       # external_url 'https://gitlab.example.com'
