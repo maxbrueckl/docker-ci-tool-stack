@@ -1,6 +1,6 @@
 FROM zsoltm/debian-armhf:jessie
 
-COPY assets/ app/
+#COPY assets/ app/
 
 RUN apt-get update \
 	&& apt-get install curl openssh-server ca-certificates postfix apt-transport-https locales \
