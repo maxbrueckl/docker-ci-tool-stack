@@ -1,4 +1,4 @@
-FROM jenkins:2.7.1
+FROM dilgerm/rpi-jenkins:latest
 
 USER root
 RUN apt-get update \
@@ -11,8 +11,8 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 # see: https://issues.jenkins-ci.org/browse/JENKINS-35025
 # see: https://get.docker.com/builds/
 # see: https://wiki.jenkins-ci.org/display/JENKINS/CloudBees+Docker+Custom+Build+Environment+Plugin#CloudBeesDockerCustomBuildEnvironmentPlugin-DockerinDocker
-RUN curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz && tar -xvzf docker-latest.tgz
-RUN mv docker/* /usr/bin/
+wget -qO- https://get.docker.com/ | sh
+#RUN mv docker/* /usr/bin/
 
 USER jenkins
 
